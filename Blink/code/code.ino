@@ -32,8 +32,8 @@ void loop() {
   Serial.print(distance);
   Serial.println(" cm");
   
-  // Check if the distance is less than 10 cm
-  if (distance < 10) {
+  // Check if the distance is less than 20cm
+  if (distance < 20) {
     digitalWrite(BUZZER_PIN, HIGH);  // Turn on the buzzer
   } else {
     digitalWrite(BUZZER_PIN, LOW);   // Turn off the buzzer
