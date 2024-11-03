@@ -2,12 +2,14 @@
 #define TRIG_PIN 9
 #define ECHO_PIN 10
 #define BUZZER_PIN 8
+#define LED_PIN 7
 
 void setup() {
   Serial.begin(9600);
   pinMode(TRIG_PIN, OUTPUT);
   pinMode(ECHO_PIN, INPUT);
   pinMode(BUZZER_PIN, OUTPUT);
+  pinMode(LED_PIN, OUTPUT);
 }
 
 void loop() {
@@ -36,8 +38,10 @@ void loop() {
   // Check if the distance is less than 20cm
   if (distance < 20) {
     digitalWrite(BUZZER_PIN, HIGH);  // Turn on the buzzer
+    digitalWrite(LED_PIN, HIGH);
   } else {
     digitalWrite(BUZZER_PIN, LOW);   // Turn off the buzzer
+     digitalWrite(LED_PIN, LOW);
   }
   
   delay(500); // Wait for half a second before the next loop
